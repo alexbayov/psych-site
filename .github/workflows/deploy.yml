@@ -1,0 +1,31 @@
+name: Deploy alexbayov.ru
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: deploy-alexbayov-ru
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger restricted VPS deploy
+        env:
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+        run: |
+          set -euo pipefail
+          test -n "$DEPLOY_SSH_KEY"
+          ssh_dir="$RUNNER_TEMP/psych-site-ssh"
+          install -m 700 -d "$ssh_dir"
+          printf '%s\n' "$DEPLOY_SSH_KEY" > "$ssh_dir/key"
+          chmod 600 "$ssh_dir/key"
+          printf '%s\n' '31.130.132.212 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP0cmQh4/UP0UbbF+8oJ3EJ/CIWcTZz1KRdGHx2xOUEk' > "$ssh_dir/known_hosts"
+          ssh -o BatchMode=yes -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes \
+            -o UserKnownHostsFile="$ssh_dir/known_hosts" -i "$ssh_dir/key" \
+            psychdeploy@31.130.132.212 deploy
