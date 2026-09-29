@@ -41,23 +41,6 @@ if ('IntersectionObserver' in window && !reduceMotion) {
   revealItems.forEach((item) => item.classList.add('is-visible'));
 }
 
-const sectionLinks = [...document.querySelectorAll('.section-marker a')];
-const trackedSections = sectionLinks
-  .map((link) => document.querySelector(link.getAttribute('href')))
-  .filter(Boolean);
-
-if ('IntersectionObserver' in window) {
-  const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      sectionLinks.forEach((link) => {
-        link.classList.toggle('is-active', link.getAttribute('href') === `#${entry.target.id}`);
-      });
-    });
-  }, { rootMargin: '-38% 0px -55% 0px' });
-  trackedSections.forEach((section) => sectionObserver.observe(section));
-}
-
 const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
 const updateMotion = () => {
