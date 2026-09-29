@@ -78,7 +78,7 @@ a { color: inherit; text-decoration: none; }
 .big-copy { max-width: 650px; margin: 38px 0; font-size: 18px; line-height: 1.72; }
 .principles { margin: 42px 0 20px; position: relative; }
 .principles::before { content: ""; position: absolute; top: 0; left: 0; width: 1px; height: var(--principles-progress, 0%); background: #78816e; transition: height .12s linear; }
-.principles p { margin: 0; padding: 19px 0; border-top: 1px solid #c7c2b9; display: flex; gap: 30px; }
+.principles p { margin: 0; padding: 19px 0 19px 22px; border-top: 1px solid #c7c2b9; display: flex; gap: 26px; }
 .principles span { color: #777d6c; font-size: 10px; }
 .session-facts { margin-bottom: 28px; display: grid; grid-template-columns: .65fr .65fr 1.4fr; border-block: 1px solid #c7c2b9; }
 .session-facts p { margin: 0; padding: 18px 12px 18px 0; }
@@ -176,6 +176,7 @@ footer { min-height: 120px; padding-block: 30px; display: flex; align-items: cen
   .topics article p { grid-column: 2; }
   .office-card img { height: 440px; }
   .approach-line { white-space: normal; }
+  .principles p { padding-left: 20px; gap: 22px; }
   .session-facts { grid-template-columns: 1fr; }
   .article-grid a { min-height: 300px; padding: 28px; }
   .contact { width: 100%; padding: 75px 22px; }
