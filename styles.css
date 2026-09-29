@@ -53,6 +53,7 @@ a { color: inherit; text-decoration: none; }
 
 .work { padding-block: 140px; display: grid; grid-template-columns: .8fr 1.2fr; gap: 8vw; }
 .section-intro h2, .approach h2, .articles h2 { font-size: clamp(40px, 4vw, 64px); line-height: 1.13; }
+.approach-line { display: block; white-space: nowrap; }
 .topics article { padding: 28px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 55px 1fr 1fr; gap: 24px; }
 .topics article > span { color: #777d6c; font-size: 10px; }
 .topics h3 { margin: 0; font: 400 22px var(--serif); }
