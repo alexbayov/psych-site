@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Prata&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=photo-layout-fix" />
+  <link rel="stylesheet" href="styles.css?v=motion-1" />
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -18,6 +18,7 @@
       <a href="#work">С чем работаю</a>
       <a href="#about">О подходе</a>
       <a href="#articles">Статьи</a>
+      <a href="#faq">Вопросы</a>
     </nav>
     <div class="header-actions">
       <div class="social-links" aria-label="Социальные сети">
@@ -30,8 +31,16 @@
     </div>
   </header>
 
+  <aside class="section-marker" aria-label="Разделы страницы">
+    <a href="#hero" aria-label="Первый экран"><span>01</span></a>
+    <a href="#work" aria-label="С чем работаю"><span>02</span></a>
+    <a href="#about" aria-label="Как строится работа"><span>03</span></a>
+    <a href="#articles" aria-label="Заметки"><span>04</span></a>
+    <a href="#faq" aria-label="Вопросы и ответы"><span>05</span></a>
+  </aside>
+
   <main id="top">
-    <section class="hero">
+    <section class="hero" id="hero">
       <div class="hero-photo" aria-hidden="true">
         <img src="assets/therapy-office-hero-v2.webp" alt="" />
       </div>
@@ -71,7 +80,7 @@
     </section>
 
     <section class="approach shell" id="about">
-      <figure class="office-card"><img src="assets/alexander-specialist.jpg" alt="Клинический психолог Александр Баев" /></figure>
+      <figure class="office-card parallax-frame"><img src="assets/alexander-specialist.jpg" alt="Клинический психолог Александр Баев" /></figure>
       <div class="approach-copy">
         <p class="eyebrow">Как строится работа</p>
         <h2>Понятная работа<span class="approach-line">с конкретной целью.</span></h2>
@@ -99,6 +108,31 @@
         <a href="https://t.me/tthis_thatt" target="_blank" rel="noreferrer"><span>Зависимость</span><h3>Когда поддерживающая группа становится единственной опорой</h3><p>О двенадцатишаговых программах, структуре и свободе выбора.</p><b>Читать ↗</b></a>
         <a href="https://t.me/tthis_thatt" target="_blank" rel="noreferrer"><span>Отношения</span><h3>Почему близость иногда усиливает тревогу</h3><p>О том, как хорошее может быть таким же трудным переживанием, как плохое.</p><b>Читать ↗</b></a>
         <a href="https://t.me/tthis_thatt" target="_blank" rel="noreferrer"><span>Культовая травма</span><h3>После выхода: как группа все еще остается центром картины мира</h3><p>О возвращении автономии без новой черно-белой системы.</p><b>Читать ↗</b></a>
+      </div>
+    </section>
+
+    <section class="faq shell" id="faq">
+      <div class="faq-heading">
+        <p class="eyebrow">Перед первой встречей</p>
+        <h2>Вопросы,<br>которые можно<br>задать заранее</h2>
+      </div>
+      <div class="faq-list">
+        <details name="faq">
+          <summary>Что делать, если я не могу точно сформулировать запрос?<span aria-hidden="true"></span></summary>
+          <p>Это нормально. На первой встрече мы вместе разберем, что происходит, чего сейчас не хватает и с чего имеет смысл начать.</p>
+        </details>
+        <details name="faq">
+          <summary>Как проходит первая консультация?<span aria-hidden="true"></span></summary>
+          <p>Мы знакомимся, обсуждаем ситуацию и ожидаемый результат. В конце встречи определяем возможный план работы и решаем, подходит ли нам такой формат.</p>
+        </details>
+        <details name="faq">
+          <summary>Сколько встреч может понадобиться?<span aria-hidden="true"></span></summary>
+          <p>Это зависит от задачи и ее истории. Я не обещаю заранее точное число сессий, но регулярно сверяю с вами цель, изменения и актуальность продолжения работы.</p>
+        </details>
+        <details name="faq">
+          <summary>Можно ли обратиться с вопросом о близком человеке?<span aria-hidden="true"></span></summary>
+          <p>Да. Особенно если вы замечаете давление со стороны группы, изоляцию или резкие изменения в поведении близкого. Для таких вопросов предусмотрена отдельная горячая линия.</p>
+        </details>
       </div>
     </section>
 
@@ -132,6 +166,6 @@
   <footer class="shell">
     <span>© <span id="year"></span> Александр Баев</span>
   </footer>
-  <script src="script.js"></script>
+  <script src="script.js?v=motion-1"></script>
 </body>
 </html>
