@@ -3,8 +3,6 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const nav = document.querySelector('.nav');
-const hero = document.querySelector('.hero');
-const heroImage = document.querySelector('.hero-photo img');
 const portraitImage = document.querySelector('.office-card img');
 const principles = document.querySelector('.principles');
 
@@ -44,14 +42,9 @@ if ('IntersectionObserver' in window && !reduceMotion) {
 const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
 const updateMotion = () => {
-  const scrollY = window.scrollY;
-  nav.classList.toggle('is-scrolled', scrollY > 36);
+  nav.classList.toggle('is-scrolled', window.scrollY > 36);
 
   if (reduceMotion) return;
-  if (heroImage && scrollY < hero.offsetHeight * 1.2) {
-    heroImage.style.setProperty('--hero-shift', `${scrollY * 0.08}px`);
-  }
-
   if (portraitImage) {
     const frame = portraitImage.parentElement.getBoundingClientRect();
     const centerOffset = window.innerHeight / 2 - (frame.top + frame.height / 2);
@@ -78,11 +71,3 @@ const requestMotionUpdate = () => {
 window.addEventListener('scroll', requestMotionUpdate, { passive: true });
 window.addEventListener('resize', requestMotionUpdate);
 updateMotion();
-
-document.querySelectorAll('.article-grid a').forEach((card) => {
-  card.addEventListener('pointermove', (event) => {
-    const rect = card.getBoundingClientRect();
-    card.style.setProperty('--card-x', `${event.clientX - rect.left}px`);
-    card.style.setProperty('--card-y', `${event.clientY - rect.top}px`);
-  });
-});
