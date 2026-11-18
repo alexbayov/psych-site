@@ -12,8 +12,7 @@ const revealGroups = [
   ['.office-card', 'reveal-scale'],
   ['.approach-copy > *', ''],
   ['.articles-heading > *, .article-grid a', ''],
-  ['.faq-heading > *, .faq details', ''],
-  ['.contact-heading > *, .contact-options article', '']
+  ['.faq-heading > *, .faq details', '']
 ];
 
 const revealItems = [];
